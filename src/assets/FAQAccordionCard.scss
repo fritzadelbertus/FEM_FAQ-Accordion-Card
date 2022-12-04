@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+$text-color1: hsl(238, 29%, 16%);
+$text-color2: hsl(14, 88%, 65%);
+$text-color3: hsl(237, 12%, 33%);
+$text-color4: hsl(240, 6%, 50%);
+$divider: hsl(240, 5%, 91%);
+
+
+.FAQAccordionCard {
+  background-color: #fef2fe;
+  color: $text-color1;
+  width: 90vw;
+  max-width: 800px;
+  font-size: 12px;
+  font-family: 'Kumbh Sans', sans-serif;
+  z-index: 1;
+  margin: 20vh 0 10vh 0;
+  padding: 20px 20px 40px 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  box-shadow: 0 50px 20px -20px #00000030,
+  0 10px 10px 0px #00000020;
+  .faq-content {
+    z-index: 1;
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .QuestionBox {
+      border-bottom: 1px solid hsla(240, 6%, 50%, 0.3);
+      padding: 10px;
+      .question{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        line-height: 25px;
+        &:hover {
+          cursor: pointer;
+          color: $text-color2;
+        }
+        &.extended {
+          font-weight: 700;
+          img {
+            transform: rotate(180deg);
+          }
+        }
+        img {
+          transition: 0.5s;
+        }
+      }
+      .expand {
+        overflow: hidden;
+        transition: 0.5s;
+        p {
+          line-height: 18px;
+          color: hsl(240, 6%, 50%);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 450px) {
+  .FAQAccordionCard {
+    margin-top: 40vh;
+  }
+}
+
+@media (max-width: 764px) {
+  .FAQAccordionCard {
+    .illustrations {
+      position: relative;
+      margin-top: -43%;
+      & > div picture {
+        display: flex;
+        justify-content: center;
+        &:nth-child(2) {
+          position: absolute;
+          width: 100%;
+          top: 55%;
+          left: 0;
+          z-index: -1;
+        }
+        img {
+          width: 80%;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 765px) {
+  .FAQAccordionCard {
+    margin: 0;
+    flex-direction: row;
+    padding: 0;
+    gap: 0;
+    .faq-content {
+      padding: 50px 70px 80px 0;
+      h1 {
+        text-align: left;
+      }
+      & > div {
+        margin-top: 20px;
+      }
+      .QuestionBox {
+        .question{
+          line-height: 25px;
+        }
+        .expand {
+          p {
+            line-height: 18px;
+          }
+        }
+      }
+    }
+    .illustrations {
+      position: relative;
+      width: 130%;
+      & > div {
+        overflow: hidden;
+        height: 100%;
+        position: relative;
+        picture {
+          position: absolute;
+          &:nth-child(1) {
+            bottom: 5vh;
+            left: -90px;
+            z-index: 1;
+          }
+          &:nth-child(2) {
+            bottom: -25vh;
+            left: -600px;
+          }
+        }
+      } 
+      .desktop-box {
+        position: absolute;
+        bottom: 10vh;
+        left: -130px;
+        z-index: 1;
+      }
+    }
+  }
+}

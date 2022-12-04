@@ -1,0 +1,25 @@
+@import './FAQAccordionCard.scss';
+
+// Background gradient:
+
+// - Soft violet: hsl(273, 75%, 66%)
+// - Soft blue: hsl(240, 73%, 65%)
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+}
+.App {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  overflow: hidden;
+}
